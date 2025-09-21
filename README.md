@@ -57,16 +57,24 @@ gas-station-app/
 
 1. **Dashboard** - Overview with alerts and analytics
 <img width="1438" height="810" alt="Screenshot 2025-09-21 at 4 33 01 PM" src="https://github.com/user-attachments/assets/163d70fd-7395-40b8-b9da-a9651a2189d6" />
-
 2. **Category Management** - Product category CRUD
+<img width="1440" height="812" alt="Screenshot 2025-09-21 at 4 34 03 PM" src="https://github.com/user-attachments/assets/edab8d2c-2e07-425d-afcf-e3631bbf0141" />
 3. **Pricebook Management** - Product management with barcode support
+<img width="1440" height="812" alt="Screenshot 2025-09-21 at 4 35 58 PM" src="https://github.com/user-attachments/assets/d451e7c5-b035-4064-8e9c-2fdfb1129c44" />
 4. **Inventory Management** - Stock management and auditing
+<img width="1440" height="813" alt="Screenshot 2025-09-21 at 4 37 20 PM" src="https://github.com/user-attachments/assets/db2a7f3c-16ec-4a00-ab40-c8e310d26b94" />
 5. **Live Sales (POS)** - Point of sale simulation
+<img width="1440" height="812" alt="Screenshot 2025-09-21 at 4 39 07 PM" src="https://github.com/user-attachments/assets/5f102dfe-3017-45f7-a883-3bcda68e44f4" />
 6. **Lottery Management** - Lottery games management
+<img width="1440" height="811" alt="Screenshot 2025-09-21 at 4 39 41 PM" src="https://github.com/user-attachments/assets/c9a4a8cc-ddf7-44c8-b6c7-0c2bfcea77d5" />
 7. **Fuel Management** - Fuel deliveries and pricing
+<img width="1436" height="593" alt="Screenshot 2025-09-21 at 4 40 28 PM" src="https://github.com/user-attachments/assets/75b21b90-121a-4aab-91ce-ed4c9cded4bf" />
 8. **Promotions** - Promotional campaigns
+<img width="1440" height="539" alt="Screenshot 2025-09-21 at 4 44 21 PM" src="https://github.com/user-attachments/assets/e0c23461-0119-4ef9-8cc8-f84ff86f2639" />
 9. **Services Logging** - Additional services tracking
+<img width="1440" height="593" alt="Screenshot 2025-09-21 at 4 44 46 PM" src="https://github.com/user-attachments/assets/83679f17-0e65-418a-a5f8-784c1f980d8b" />
 10. **User Access Management** - Role-based authentication
+<img width="1440" height="540" alt="Screenshot 2025-09-21 at 4 45 20 PM" src="https://github.com/user-attachments/assets/30c419ce-d931-4b5e-86c9-11ad59c3525d" />
 
 ## Database Configuration
 
