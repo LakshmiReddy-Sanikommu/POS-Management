@@ -1,4 +1,4 @@
-# Gas Station Back-Office Application
+# POS Back-Office Application
 
 A comprehensive modular Gas Station management system built with modern technologies.
 
@@ -26,7 +26,7 @@ A comprehensive modular Gas Station management system built with modern technolo
 ## Project Structure
 
 ```
-gas-station-app/
+G/
 ├── backend/                          # Spring Boot Backend
 │   ├── src/main/java/com/gasstation/
 │   │   ├── config/                   # Configuration classes
