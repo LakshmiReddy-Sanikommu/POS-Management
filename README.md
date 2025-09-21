@@ -1,6 +1,6 @@
-# POS Back-Office Application
+# POS Management System
 
-A comprehensive modular Gas Station management system built with modern technologies.
+A comprehensive modular Gas Station management system built with modern technologies. This application provides a complete point-of-sale solution for gas stations with inventory management, user authentication, and real-time transaction processing.
 
 ## Tech Stack
 
@@ -8,8 +8,8 @@ A comprehensive modular Gas Station management system built with modern technolo
 - Java 17+ with Spring Boot 3.x
 - Spring Security with JWT Authentication
 - Hibernate/JPA for ORM
-- Supabase PostgreSQL Database
-- Flyway for Database Migrations
+- H2 Database (In-Memory) for Development
+- MySQL/PostgreSQL Support for Production
 - Maven for Dependency Management
 
 **Frontend:**
@@ -19,14 +19,10 @@ A comprehensive modular Gas Station management system built with modern technolo
 - Axios for API Communication
 - Context API for State Management
 
-**DevOps:**
-- Docker for Containerization
-- Maven for Build Management
-
 ## Project Structure
 
 ```
-G/
+gas-station-app/
 ├── backend/                          # Spring Boot Backend
 │   ├── src/main/java/com/gasstation/
 │   │   ├── config/                   # Configuration classes
@@ -72,29 +68,79 @@ G/
 
 ## Database Configuration
 
-**Supabase PostgreSQL Connection:**
-- Project URL: `https://plfdcshdyijssjqlepfo.supabase.co`
-- Connection String: `postgresql://postgres:gassamramgas@db.plfdcshdyijssjqlepfo.supabase.co:5432/postgres`
+**Development (H2 In-Memory Database):**
+- Automatically configured for local development
+- Sample data is loaded on startup
+- No additional setup required
+
+**Production Options:**
+- MySQL Database (see `setup_local_mysql.sh` for setup)
+- PostgreSQL Database (configure in `application.yml`)
 
 ## Getting Started
 
-### Backend Setup
+### Prerequisites
+- Java 17 or higher
+- Node.js 16 or higher
+- Maven 3.6 or higher
+
+### Quick Start (Recommended)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/LakshmiReddy-Sanikommu/POS-Management.git
+   cd POS-Management
+   ```
+
+2. **Start the Backend:**
+   ```bash
+   cd backend
+   mvn spring-boot:run -Dspring-boot.run.profiles=h2
+   ```
+   The backend will start on `http://localhost:8080`
+
+3. **Start the Frontend:**
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
+   The frontend will start on `http://localhost:3000`
+
+4. **Access the Application:**
+   - Open your browser and go to `http://localhost:3000`
+   - Use the login credentials below
+
+### Login Credentials
+
+**Demo Accounts (All passwords: `password123`):**
+- **Admin:** `admin` / `password123` - Full system access
+- **Manager:** `manager1` / `password123` - Management and cashier functions
+- **Cashier:** `cashier1` / `password123` - Point of sale operations
+
+### Alternative Setup Methods
+
+**Backend Setup (Manual):**
 ```bash
 cd backend
 mvn clean install
-mvn spring-boot:run
+mvn spring-boot:run -Dspring-boot.run.profiles=h2
 ```
 
-### Frontend Setup
+**Frontend Setup (Manual):**
 ```bash
 cd frontend
 npm install
 npm start
 ```
 
-### Docker Setup
+**MySQL Setup (Optional):**
 ```bash
-docker-compose up --build
+# Setup MySQL database
+./setup_local_mysql.sh
+
+# Start with MySQL
+./start_backend_mysql.sh
 ```
 
 ## API Documentation
@@ -102,17 +148,77 @@ docker-compose up --build
 The backend exposes RESTful APIs at:
 - Base URL: `http://localhost:8080/api`
 - Health Check: `http://localhost:8080/actuator/health`
+- Authentication: `http://localhost:8080/api/auth/signin`
+
+### Key API Endpoints:
+- `POST /api/auth/signin` - User login
+- `GET /api/products` - Get all products
+- `GET /api/pos/transactions` - Get transaction history
+- `GET /api/categories` - Get product categories
+- `GET /api/users` - Get user list (Admin only)
 
 ## Security
 
-- JWT-based authentication
+- JWT-based authentication with 24-hour token expiration
 - Role-based access control (Admin, Manager, Cashier)
 - Spring Security configuration
 - Protected API endpoints
+- Password encryption using BCrypt
+
+## Features
+
+### Dashboard
+- Real-time system overview
+- Sales analytics and alerts
+- Quick access to all modules
+
+### Point of Sale (POS)
+- Barcode scanning support
+- Multiple payment methods (Cash, Credit Card, Debit Card, EBT)
+- Tax calculation
+- Receipt generation
+- Transaction history
+
+### Inventory Management
+- Product catalog with categories
+- Stock level monitoring
+- Low stock alerts
+- Barcode management
+
+### User Management
+- Role-based access control
+- User authentication and authorization
+- Secure password management
 
 ## Development
 
-1. Backend runs on port 8080
-2. Frontend runs on port 3000
-3. Database migrations handled by Flyway
-4. Hot reloading enabled for development 
+### Current Status
+- ✅ Backend: Running on port 8080
+- ✅ Frontend: Running on port 3000
+- ✅ Database: H2 in-memory with sample data
+- ✅ Authentication: Working with demo credentials
+- ✅ All modules: Functional and tested
+
+### Development Notes
+1. Backend runs on port 8080 with H2 database
+2. Frontend runs on port 3000 with hot reloading
+3. Sample data automatically loaded on startup
+4. JWT tokens valid for 24 hours
+5. All API endpoints protected except authentication
+
+### Troubleshooting
+
+**If login fails:**
+- Ensure backend is running on port 8080
+- Check that H2 profile is active
+- Verify credentials: `admin` / `password123`
+
+**If frontend can't connect:**
+- Check backend health: `http://localhost:8080/actuator/health`
+- Verify CORS configuration
+- Check browser console for errors
+
+**Database issues:**
+- H2 database resets on each restart
+- Sample data is automatically loaded
+- For persistent data, use MySQL setup 
