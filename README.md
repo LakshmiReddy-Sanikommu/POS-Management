@@ -56,6 +56,8 @@ gas-station-app/
 ## Modules
 
 1. **Dashboard** - Overview with alerts and analytics
+<img width="1438" height="810" alt="Screenshot 2025-09-21 at 4 33 01 PM" src="https://github.com/user-attachments/assets/163d70fd-7395-40b8-b9da-a9651a2189d6" />
+
 2. **Category Management** - Product category CRUD
 3. **Pricebook Management** - Product management with barcode support
 4. **Inventory Management** - Stock management and auditing
